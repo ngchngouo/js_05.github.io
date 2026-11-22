@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tra cứu giá hoa quả</title>
+    <style>
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+}
+
+.container {
+    width: 350px;
+    margin: 100px auto;
+    padding: 30px;
+    background-color: white;
+    text-align: center;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+h2 {
+    color: #e91e63;
+    margin-bottom: 25px;
+}
+
+input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 16px;
+}
+
+button {
+    padding: 10px 25px;
+    background-color: #e91e63;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #c2185b;
+}
+
+#ketqua {
+    margin-top: 20px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #2196f3;
+}
+    </style>
+</head>
+<body>
+    <div class="container">
+
+        <h2>Giá hoa quả</h2>
+
+        <input type="text" id="ten_hoa_qua"
+               placeholder="Nhập tên hoa quả">
+
+        <button onclick="xemGia()">Xem giá</button>
+
+        <p id="ketqua"></p>
+
+    </div>
+    <script>
+
+function xemGia() {
+
+    // Lấy tên hoa quả người dùng nhập
+    let ten_hoa_qua = document.getElementById("ten_hoa_qua").value;
+
+    let gia = "";
+
+    // Chuyển tên hoa quả thành chữ thường
+    ten_hoa_qua = ten_hoa_qua.trim().toLowerCase();
+
+    // Kiểm tra giá hoa quả
+    switch (ten_hoa_qua) {
+
+        case "ổi":
+            gia = "20000 VNĐ/kg";
+            break;
+
+        case "dưa hấu":
+            gia = "20000 VNĐ/kg";
+            break;
+
+        case "táo":
+            gia = "30000 VNĐ/kg";
+            break;
+
+        case "cam":
+            gia = "40000 VNĐ/kg";
+            break;
+
+        case "chôm chôm":
+            gia = "40000 VNĐ/kg";
+            break;
+
+        case "măng cụt":
+            gia = "50000 VNĐ/kg";
+            break;
+
+        default:
+            gia = "Tìm không thấy";
+    }
+
+    // Hiển thị kết quả
+    document.getElementById("ketqua").innerHTML = gia;
+}
+    </script>
+</body>
+</html>
